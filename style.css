@@ -1,1 +1,183 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
 
+body{
+  overflow:hidden;
+  background:black;
+}
+
+/* LOCK SCREEN */
+
+#lockScreen{
+  width:100vw;
+  height:100vh;
+  background:black;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.lock-title{
+  color:red;
+  font-size:32px;
+  margin-bottom:30px;
+  letter-spacing:3px;
+}
+
+#pinDisplay{
+  width:180px;
+  height:50px;
+  border:2px solid red;
+  color:red;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:30px;
+  margin-bottom:30px;
+  border-radius:12px;
+}
+
+.keypad{
+  display:grid;
+  grid-template-columns:repeat(3,80px);
+  gap:15px;
+}
+
+.keypad button{
+  width:80px;
+  height:80px;
+  border:none;
+  border-radius:50%;
+  background:#111;
+  color:red;
+  font-size:28px;
+  box-shadow:0 0 15px red;
+}
+
+.keypad button:active{
+  transform:scale(0.9);
+}
+
+/* INTRO */
+
+#introScreen{
+  display:none;
+  width:100vw;
+  height:100vh;
+  background:black;
+  justify-content:center;
+  align-items:center;
+}
+
+#introVideo{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* MENU */
+
+#menuScreen{
+  display:none;
+  width:100vw;
+  height:100vh;
+  background:linear-gradient(to bottom,#111,#222,#333);
+  color:white;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.main-title{
+  font-size:42px;
+  margin-bottom:10px;
+  color:#fff;
+}
+
+.sub-title{
+  color:#ff4444;
+  margin-bottom:50px;
+}
+
+.game-buttons{
+  display:flex;
+  flex-direction:column;
+  gap:25px;
+}
+
+.game-btn{
+  width:260px;
+  height:70px;
+  border:none;
+  border-radius:20px;
+  background:#ff4444;
+  color:white;
+  font-size:26px;
+  box-shadow:0 0 20px #ff4444;
+}
+
+.game-btn:active{
+  transform:scale(0.95);
+}
+
+/* GAME SCREENS */
+
+#cinoGame,
+#hinessGame{
+  display:none;
+  width:100vw;
+  height:100vh;
+  position:relative;
+  overflow:hidden;
+  background:#ddd;
+}
+
+.score-board{
+  position:absolute;
+  top:15px;
+  left:15px;
+  z-index:10;
+  background:white;
+  padding:10px 20px;
+  border-radius:12px;
+  font-size:22px;
+  font-weight:bold;
+}
+
+canvas{
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+  .main-title{
+    font-size:34px;
+    text-align:center;
+  }
+
+  .game-btn{
+    width:220px;
+    height:65px;
+    font-size:22px;
+  }
+
+  .keypad{
+    grid-template-columns:repeat(3,70px);
+  }
+
+  .keypad button{
+    width:70px;
+    height:70px;
+    font-size:24px;
+  }
+
+}
