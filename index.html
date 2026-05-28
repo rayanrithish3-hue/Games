@@ -1,1 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rider 3000 Games</title>
 
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- PASSWORD SCREEN -->
+  <div id="lockScreen">
+
+    <h1 class="lock-title">ENTER PASSWORD</h1>
+
+    <div id="pinDisplay">----</div>
+
+    <div class="keypad">
+
+      <button onclick="pressKey('1')">1</button>
+      <button onclick="pressKey('2')">2</button>
+      <button onclick="pressKey('3')">3</button>
+
+      <button onclick="pressKey('4')">4</button>
+      <button onclick="pressKey('5')">5</button>
+      <button onclick="pressKey('6')">6</button>
+
+      <button onclick="pressKey('7')">7</button>
+      <button onclick="pressKey('8')">8</button>
+      <button onclick="pressKey('9')">9</button>
+
+      <button onclick="clearPin()">C</button>
+      <button onclick="pressKey('0')">0</button>
+      <button onclick="checkPin()">OK</button>
+
+    </div>
+
+  </div>
+
+  <!-- INTRO VIDEO -->
+  <div id="introScreen">
+
+    <video id="introVideo" autoplay playsinline>
+      <source src="assets/intro.mp4" type="video/mp4">
+    </video>
+
+  </div>
+
+  <!-- MAIN MENU -->
+  <div id="menuScreen">
+
+    <h1 class="main-title">Rider 3000 Games</h1>
+    <h2 class="sub-title">Games</h2>
+
+    <div class="game-buttons">
+
+      <button class="game-btn" onclick="startCinoGame()">
+        Cino Rider
+      </button>
+
+      <button class="game-btn" onclick="startHinessGame()">
+        Hiness Rider
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- CINO GAME -->
+  <div id="cinoGame">
+
+    <div class="score-board">
+      Score :
+      <span id="score">0</span>
+    </div>
+
+    <canvas id="cinoCanvas"></canvas>
+
+  </div>
+
+  <!-- HINESS GAME -->
+  <div id="hinessGame">
+
+    <div class="score-board">
+      Distance :
+      <span id="distance">0</span>
+    </div>
+
+    <canvas id="hinessCanvas"></canvas>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
